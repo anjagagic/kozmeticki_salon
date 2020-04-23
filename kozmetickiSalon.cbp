@@ -34,13 +34,13 @@
 		</Compiler>
 		<Unit filename="KozmetickiSalon.hpp" />
 		<Unit filename="datum.hpp" />
-		<Unit filename="frizura.hpp" />
 		<Unit filename="klijent.hpp" />
 		<Unit filename="korisnik.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="manikir.hpp" />
 		<Unit filename="masaza.hpp" />
 		<Unit filename="pedikir.hpp" />
+		<Unit filename="sminka.hpp" />
 		<Unit filename="termin.hpp" />
 		<Unit filename="trepavice.hpp" />
 		<Unit filename="usluga.hpp" />

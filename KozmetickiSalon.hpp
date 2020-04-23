@@ -1,6 +1,7 @@
 #ifndef KOZMETICKISALON_HPP_INCLUDED
 #define KOZMETICKISALON_HPP_INCLUDED
-
+#include "usluga.hpp"
+#include "vrstaZaposlenog.hpp"
 class KozmetickiSalon{
 private:
     string nazivSalona;
