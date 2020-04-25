@@ -1,4 +1,25 @@
 # depslib dependency file v1.0
-1587483550 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1587805315 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
+	"masaza.hpp"
+
+1587805749 c:\users\hp\desktop\programing\kozmetickisalon\masaza.hpp
+	"usluga.hpp"
+
+1587805791 c:\users\hp\desktop\programing\kozmetickisalon\usluga.hpp
+	"vrstaZaposlenog.hpp"
+
+1587806120 c:\users\hp\desktop\programing\kozmetickisalon\vrstazaposlenog.hpp
+	"termin.hpp"
+	"korisnik.hpp"
+
+1587806055 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
+	"vreme.hpp"
+	"datum.hpp"
+
+1587806082 c:\users\hp\desktop\programing\kozmetickisalon\vreme.hpp
+
+1587805736 c:\users\hp\desktop\programing\kozmetickisalon\datum.hpp
+
+1587805668 c:\users\hp\desktop\programing\kozmetickisalon\korisnik.hpp
 

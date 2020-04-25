@@ -2,11 +2,18 @@
 #define KOZMETICKISALON_HPP_INCLUDED
 #include "usluga.hpp"
 #include "vrstaZaposlenog.hpp"
-class KozmetickiSalon{
+class KozmetickiSalon
+{
 private:
     string nazivSalona;
     Usluga usluge[5];
     Zaposleni zaposleni[100];
+public:
+    KozmetickiSalon()
+    {
+        nazivSalona="naziv";
+    }
 };
+
 
 #endif // KOZMETICKISALON_HPP_INCLUDED
