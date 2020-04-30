@@ -11,6 +11,7 @@ public:
     {
         cena=c;
     }
+    //ucitaj zaposlene iz fajla
 };
 
 #endif // USLUGA_HPP_INCLUDED

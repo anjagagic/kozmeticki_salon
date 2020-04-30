@@ -13,6 +13,9 @@ public:
     {
         nazivSalona="naziv";
     }
+    void unesiUsluge(){
+
+    }
 };
 
 

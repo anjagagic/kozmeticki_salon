@@ -1,7 +1,6 @@
 # depslib dependency file v1.0
-1587805315 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1588260617 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
-	"masaza.hpp"
 
 1587805749 c:\users\hp\desktop\programing\kozmetickisalon\masaza.hpp
 	"usluga.hpp"
