@@ -4,7 +4,13 @@ using namespace std;
 
 int main()
 {
-    //zakazivanje i pregled termina
+    /*predlog za funkcionalnost:
+    zakazivanje i pregled termina:
+    prvo se korisnik odabere da li je zaposleni ili klijent, zatim se uloguje,
+    pa ako je klijent zakazuje termin tako sto bira uslugu, pa zaposlenog i na kraju vreme,
+    a ukoliko je zaposleni moze da pregleda termine koji su zakazani
+    */
+
     /*cout<<"da li ste klijent ili zaposleni?"<<endl;
     if (klijent){
     cout<<"da li imate nalog?"<<endl;
