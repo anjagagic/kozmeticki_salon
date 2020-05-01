@@ -9,6 +9,7 @@ private:
     int id;
     VrstaZaposlenog zanimanje;
     Termin termini[50];
+    int duzinaNiza;
 public:
     Zaposleni()
     {
@@ -16,8 +17,14 @@ public:
         zanimanje=SMINKER;
     }
 
-    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z){}
+    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z, int d):Korisnik(u, s, i, p), id(ID), zanimanje(z), duzinaNiza(d){}
 
+    void dodajTermin(Termin t){
+        if(duzinaNiza<50){
+            termini[duzinaNiza+1]=t;
+            duzinaNiza++;
+        }
+    }
     void pregledTermina(){
         for(int i=0; i<50; i++){
             cout<<termini[i];

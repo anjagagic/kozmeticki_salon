@@ -1,11 +1,7 @@
 #ifndef KLIJENT_HPP_INCLUDED
 #define KLIJENT_HPP_INCLUDED
-#include "termin.hpp"
-#include "sminka.hpp"
-#include "manikir.hpp"
-#include "pedikir.hpp"
-#include "masaza.hpp"
-#include "trepavice.hpp"
+#include "vrstaZaposlenog.hpp"
+
 class Klijent: public Korisnik
 {
 private:
@@ -24,34 +20,34 @@ public:
             cin>>unos;
         }
         if (unos==1){
-            Sminka s(500, "usluga1");
+            Zaposleni z1("ime", "prezime", "username", "sifra", 1, SMINKER);
             Termin t(30, 4, 2020, 15, 30, false, 3);
             termini[broj++]=t;
-            s.dodajTermin(t, termini);
+            z1.dodajTermin(t, termini);
         }
         if (unos==2){
-            Manikir m(500, "usluga2");
+            Zaposleni z2("ime2", "prezime2", "username2", "sifra2", 2, MANIKER);
             Termin t(1, 4, 2020, 15, 30, false, 3);
             termini[broj++]=t;
-            m.dodajTermin(t, termini);
+            z2.dodajTermin(t, termini);
         }
         if (unos==3){
-            Pedikir p(500, "usluga3");
+            Zaposleni z3("ime3", "prezime3", "username3", "sifra3", 3, PEDIKER);
             Termin t(5, 4, 2020, 15, 30, false, 3);
             termini[broj++]=t;
-            p.dodajTermin(t, termini);
+            z3.dodajTermin(t, termini);
         }
         if (unos==4){
-            Masaza mm(500, "usluga4");
+            Zaposleni z4("ime4", "prezime4", "username4", "sifra4", 4, MASER);
             Termin t(29, 4, 2020, 15, 30, false, 3);
             termini[broj++]=t;
-            mm.dodajTermin(t, termini);
+            z4.dodajTermin(t, termini);
         }
         if (unos==5){
-            Trepavice tr(500, "usluga5");
+            Zaposleni z5("ime5", "prezime5", "username5", "sifra5", 5, TREPAVICE);
             Termin t(18, 4, 2020, 15, 30, false, 3);
             termini[broj++]=t;
-            tr.dodajTermin(t, termini);
+            z5.dodajTermin(t, termini);
         }
 
     }
