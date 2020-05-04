@@ -1,64 +1,23 @@
 #include <iostream>
 
 using namespace std;
+#include "termin.hpp"
+#include "vreme.hpp"
+#include "vrstaZaposlenog.hpp"
+#include "klijent.hpp"
+#include "manikir.hpp"
+#include "sminka.hpp"
+#include "trepavice.hpp"
+#include "usluga.hpp"
+#include "KozmetickiSalon.hpp"
+#include "masaza.hpp"
+#include "korisnik.hpp"
+#include "pedikir.hpp"
+#include "datum.hpp"
 
 int main()
 {
-    /*predlog za funkcionalnost:
-    zakazivanje i pregled termina:
-    prvo se korisnik odabere da li je zaposleni ili klijent, zatim se uloguje,
-    pa ako je klijent zakazuje termin tako sto bira uslugu, pa zaposlenog i na kraju vreme,
-    a ukoliko je zaposleni moze da pregleda termine koji su zakazani
-    */
-
-    /*cout<<"da li ste klijent ili zaposleni?"<<endl;
-    if (klijent){
-    cout<<"da li imate nalog?"<<endl;
-    cout<<"1.da"<<endl;
-    cout<<"2.ne"<<endl;
-    do{
-        cin>>odg;
-    }while(odg!=1 && odg!=2);
-     if(odg==1){
-        loginKlijent
-    }
-    else if(odg==2){
-        registracija
-    }
-    cout<<"odaberi uslugu"<<endl;
-     ispis usluga
-     cin>>usluga;
-    cout<<"odaberi zaposlenog"<<endl;
-     ispis zaposlenih
-     cin>>zaposleni
-    cout<<"odaberi termin"<<endl;
-    do{
-     cin>>termin
-     if(zauzet==true){
-     cout<<"termin je zauzet, unesite novi"<<endl;
-     }
-    }while(zauzet==true);
-    cout<<"zelite li da potvrdite termin ili izmenite nesto"<<endl;
-    cout<<"1.da, sacuvaj"<<endl;
-    cout<<"2.ne, zelim da promenim"<<endl;
-    cout<<"3.zelim jos jedan termin"<<endl;
-    do{
-        cin>>odg;
-    }while(odg!=1 && odg!=2);
-     if(odg==1){
-        sacuvaj
-    }
-    else if(odg==2){
-        vrati na pocetak
-    }
-    else if(odg==3){
-        vrati i ponudi izbor opet ali sacuvaj ovo od pre
-    }
-    }
-    else if(zaposleni){
-        login
-        pregled zakazanih termina;
-    }*/
-
+    Termin t1;
+    t1.citajFajl("terminnn.txt");
     return 0;
 }

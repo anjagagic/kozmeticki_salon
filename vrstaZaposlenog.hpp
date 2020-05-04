@@ -25,12 +25,12 @@ public:
             duzinaNiza++;
         }
     }
-    void pregledTermina(){
+    /*void pregledTermina(){
         for(int i=0; i<50; i++){
             cout<<termini[i];
         }
-    }
-    void login(){
+    }*/
+    /*void login(){
         Korisnik::login();
         cout<<"odaberite vrstu zaposlenog: "<<endl;
         cout<<"1. sminker"<<endl;
@@ -45,8 +45,10 @@ public:
         }
         cout<<"uspesno logovanje"<<endl;
         //ili neuspesno
-    }
-    //registracija i sacuvaj u dati fajl
+    }*/
+
+
+
 };
 
 #endif // VRSTAZAPOSLENOG_HPP_INCLUDED
