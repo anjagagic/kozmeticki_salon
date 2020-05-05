@@ -15,6 +15,8 @@ public:
         sat=s;
         minut=m;
     }
+    int getSat()const{return sat;}
+    int getMinut()const{return minut;}
 };
 
 

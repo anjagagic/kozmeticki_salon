@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1588620104 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1588702861 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
 	"termin.hpp"
 	"vreme.hpp"
@@ -15,22 +15,22 @@
 	"pedikir.hpp"
 	"datum.hpp"
 
-1588620795 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
+1588703341 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
 	<fstream>
 	"vreme.hpp"
 	"datum.hpp"
 
-1587806082 c:\users\hp\desktop\programing\kozmetickisalon\vreme.hpp
+1588703456 c:\users\hp\desktop\programing\kozmetickisalon\vreme.hpp
 
-1587805736 c:\users\hp\desktop\programing\kozmetickisalon\datum.hpp
+1588703659 c:\users\hp\desktop\programing\kozmetickisalon\datum.hpp
 
-1588620911 c:\users\hp\desktop\programing\kozmetickisalon\vrstazaposlenog.hpp
+1588703659 c:\users\hp\desktop\programing\kozmetickisalon\vrstazaposlenog.hpp
 	"termin.hpp"
 	"korisnik.hpp"
 
 1588197610 c:\users\hp\desktop\programing\kozmetickisalon\korisnik.hpp
 
-1588621082 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
+1588703659 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
 	"vrstaZaposlenog.hpp"
 	"termin.hpp"
 
@@ -46,7 +46,7 @@
 1588331182 c:\users\hp\desktop\programing\kozmetickisalon\trepavice.hpp
 	"usluga.hpp"
 
-1588621150 c:\users\hp\desktop\programing\kozmetickisalon\kozmetickisalon.hpp
+1588701148 c:\users\hp\desktop\programing\kozmetickisalon\kozmetickisalon.hpp
 	"usluga.hpp"
 	"vrstaZaposlenog.hpp"
 

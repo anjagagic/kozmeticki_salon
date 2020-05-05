@@ -37,9 +37,8 @@ public:
     Vreme getVreme() const {return vreme;}
     Datum getDatum() const {return datum;}
     int getID()const{return idZaposlenog;}
-    int getBroj(){
-        return broj;
-    }
+    bool getZauzet()const{return zauzet;}
+    int getBroj()const{return broj;}
     Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0){}
     Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id, int b):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id), broj(b) {}
     //friend ostream& operator<<(ostream& out, const Termin& t);

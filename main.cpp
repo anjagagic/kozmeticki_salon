@@ -19,5 +19,7 @@ int main()
 {
     Termin t1;
     t1.citajFajl("terminnn.txt");
+    Klijent k;
+    k.zakaziTermin();
     return 0;
 }

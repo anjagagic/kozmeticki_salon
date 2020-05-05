@@ -9,9 +9,7 @@ private:
     Usluga usluge[5];
     Zaposleni zaposleni[100];
 public:
-    /*void unesiUsluge(){
 
-    }*/
 };
 
 

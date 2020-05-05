@@ -19,7 +19,9 @@ public:
         mesec=m;
         godina=g;
     }
-
+    int getDan()const {return dan;}
+    int getMesec()const {return mesec;}
+    int getGodina()const {return godina;}
 };
 
 #endif // DATUM_HPP_INCLUDED

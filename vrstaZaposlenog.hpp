@@ -2,6 +2,16 @@
 #define VRSTAZAPOSLENOG_HPP_INCLUDED
 #include "termin.hpp"
 #include "korisnik.hpp"
+
+/*ostream& operator<<(ostream& out, const Termin& t){
+        out<<t.getDatum()<<endl;
+        out<<t.getBroj()<<endl;
+        out<<t.getID()<<endl;
+        out<<t.getVreme()<<endl;
+        out<<t.getZauzet()<<endl;
+        return out;
+}*/
+
 enum VrstaZaposlenog {SMINKER, MANIKER, PEDIKER, TREPAVICE, MASER};
 class Zaposleni: public Korisnik
 {
@@ -18,6 +28,7 @@ public:
     }
 
     Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z, int d):Korisnik(u, s, i, p), id(ID), zanimanje(z), duzinaNiza(d){}
+    friend ostream& operator<<(ostream& out, const Termin& t);
 
     void dodajTermin(Termin t){
         if(duzinaNiza<50){
