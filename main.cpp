@@ -40,13 +40,19 @@ ostream& operator<<(ostream& out, const Klijent& k){
 int main()
 {
     Termin t1;
+    cout<<"Broj termina na pocetku:"<<t1.getBrOj()<<endl;
+    {
+        Termin t2;
+         cout<<"Broj termina kad smo dodali novi:"<<t1.getBrOj()<<endl;
+    }
+    cout<<"Broj termina posle unistenja novog:"<<t1.getBrOj()<<endl;
     Klijent k1;
     Zaposleni z1;
     cout<<z1<<endl;
     cout<<t1<<endl;
     cout<<k1<<endl;
-    //t1.citajFajl("terminnn.txt");
-    //k1.zakaziTermin();
-    cout<<"Broj - ispis:"<<t1.getBroj()<<endl;
+    t1.citajFajl("terminnn.txt");
+    k1.zakaziTermin();
+    cout<<"Broj termina na kraju:"<<t1.getBrOj()<<endl;
     return 0;
 }
