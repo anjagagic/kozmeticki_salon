@@ -39,10 +39,10 @@ ostream& operator<<(ostream& out, const Klijent& k){
 
 int main()
 {
-    Termin t1;
+    Termin t1(18, 12, 2020, 15, 30, false, 1);
     cout<<"Broj termina na pocetku:"<<t1.getBrOj()<<endl;
     {
-        Termin t2;
+        Termin t2(14, 6, 2020, 12, 15, false, 4);
          cout<<"Broj termina kad smo dodali novi:"<<t1.getBrOj()<<endl;
     }
     cout<<"Broj termina posle unistenja novog:"<<t1.getBrOj()<<endl;
