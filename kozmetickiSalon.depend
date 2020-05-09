@@ -24,7 +24,7 @@
 
 1588703659 c:\users\hp\desktop\programing\kozmetickisalon\datum.hpp
 
-1589060906 c:\users\hp\desktop\programing\kozmetickisalon\vrstazaposlenog.hpp
+1589061661 c:\users\hp\desktop\programing\kozmetickisalon\vrstazaposlenog.hpp
 	<iostream>
 	"termin.hpp"
 	"korisnik.hpp"
@@ -32,7 +32,7 @@
 1589060889 c:\users\hp\desktop\programing\kozmetickisalon\korisnik.hpp
 	<vector>
 
-1589061041 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
+1589061687 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
 	"vrstaZaposlenog.hpp"
 	"termin.hpp"
 

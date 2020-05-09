@@ -33,7 +33,6 @@ class Zaposleni: public Korisnik
 private:
     int id;
     VrstaZaposlenog zanimanje;
-    int duzinaNiza;
     vector<Termin> termini;
 public:
     Zaposleni()
@@ -42,7 +41,7 @@ public:
         zanimanje=SMINKER;
     }
 
-    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z, int d):Korisnik(u, s, i, p), id(ID), zanimanje(z), duzinaNiza(d){}
+    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z){}
     friend ostream& operator<<(ostream& out, const Termin& t);
 
     void dodajTermin(const Termin& t){
