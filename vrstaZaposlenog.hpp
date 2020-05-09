@@ -47,11 +47,11 @@ public:
     void dodajTermin(const Termin& t){
         termini.push_back(t);
         }
-    void pregledTermina(){
+    /*void pregledTermina(){
         for(int i=0; i<50; i++){
             cout<<termini[i];
         }
-    }
+    }*/
     int getID()const{return id;}
     VrstaZaposlenog getZaposleni()const{return zanimanje;}
 
