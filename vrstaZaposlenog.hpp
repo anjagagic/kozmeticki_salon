@@ -1,25 +1,40 @@
 #ifndef VRSTAZAPOSLENOG_HPP_INCLUDED
 #define VRSTAZAPOSLENOG_HPP_INCLUDED
+#include <iostream>
 #include "termin.hpp"
 #include "korisnik.hpp"
 
-/*ostream& operator<<(ostream& out, const Termin& t){
-        out<<t.getDatum()<<endl;
-        out<<t.getBroj()<<endl;
-        out<<t.getID()<<endl;
-        out<<t.getVreme()<<endl;
-        out<<t.getZauzet()<<endl;
-        return out;
-}*/
+ostream& operator<<(ostream& izlaz1, const Datum& d){
+    izlaz1<<d.getDan()<<"."<<d.getMesec()<<"."<<d.getGodina()<<"."<<endl;
+    return izlaz1;
+}
 
+ostream& operator<<(ostream& izlaz2, const Vreme& v){
+    izlaz2<<v.getSat()<<":"<<v.getMinut()<<endl;
+    return izlaz2;
+}
+
+ostream& operator<<(ostream& out, const Termin& t){
+        out<<"TERMIN - ISPIS"<<endl;
+        out<<"--------------"<<endl;
+        out<<"Datum:"<<t.getDatum()<<endl;
+        out<<"Vreme:"<<t.getVreme()<<endl;
+        out<<"ID zaposlenog:"<<t.getID()<<endl;
+        if(t.getZauzet()==1){
+        out<<"Termin zauzet"<<endl;}
+        out<<"Termin nije zauzet"<<endl;
+        out<<"Broj:"<<t.getBroj()<<endl;
+        out<<endl;
+        return out;
+}
 enum VrstaZaposlenog {SMINKER, MANIKER, PEDIKER, TREPAVICE, MASER};
 class Zaposleni: public Korisnik
 {
 private:
     int id;
     VrstaZaposlenog zanimanje;
-    Termin termini[50];
     int duzinaNiza;
+    Termin termini[50];
 public:
     Zaposleni()
     {
@@ -36,11 +51,15 @@ public:
             duzinaNiza++;
         }
     }
-    /*void pregledTermina(){
+    void pregledTermina(){
         for(int i=0; i<50; i++){
             cout<<termini[i];
         }
-    }*/
+    }
+    int getID()const{return id;}
+    VrstaZaposlenog getZaposleni()const{return zanimanje;}
+
+
     /*void login(){
         Korisnik::login();
         cout<<"odaberite vrstu zaposlenog: "<<endl;

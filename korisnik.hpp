@@ -1,6 +1,5 @@
 #ifndef KORISNIK_HPP_INCLUDED
 #define KORISNIK_HPP_INCLUDED
-
 class Korisnik
 {
 protected:
@@ -8,10 +7,10 @@ protected:
     string ime, prezime;
 public:
     Korisnik(){
-        username="";
-        sifra="";
-        ime="";
-        prezime="";
+        username="username";
+        sifra="123";
+        ime="ime";
+        prezime="prezime";
     }
     Korisnik(string u, string s, string i, string p)
     {
@@ -37,7 +36,11 @@ public:
         cin>>sifra;
         //ispis da li je uspesno ili nije
     }
+    friend ostream& operator<<(ostream& out, const Korisnik& k);
+    string getUsername()const{return username;}
+    string getSifra()const{return sifra;}
+    string getIme()const{return ime;}
+    string getPrezime()const{return prezime;}
 };
-
 
 #endif // KORISNIK_HPP_INCLUDED

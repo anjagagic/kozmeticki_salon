@@ -28,7 +28,7 @@ void citajTxt(string nazivFajla)
 class Termin
 {
 private:
-    int broj;
+    static int broj;
     Vreme vreme;
     Datum datum;
     bool zauzet;
@@ -40,7 +40,7 @@ public:
     bool getZauzet()const{return zauzet;}
     int getBroj()const{return broj;}
     Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0){}
-    Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id, int b):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id), broj(b) {}
+    Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id) {}
     //friend ostream& operator<<(ostream& out, const Termin& t);
 
     void citajFajl(string nazivFajla){
@@ -50,5 +50,5 @@ public:
     }
 
 };
-
+int Termin::broj=0;
 #endif // TERMIN_HPP_INCLUDED
