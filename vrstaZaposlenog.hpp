@@ -34,7 +34,7 @@ private:
     int id;
     VrstaZaposlenog zanimanje;
     int duzinaNiza;
-    Termin termini[50];
+    vector<Termin> termini;
 public:
     Zaposleni()
     {
@@ -45,12 +45,9 @@ public:
     Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z, int d):Korisnik(u, s, i, p), id(ID), zanimanje(z), duzinaNiza(d){}
     friend ostream& operator<<(ostream& out, const Termin& t);
 
-    void dodajTermin(Termin t){
-        if(duzinaNiza<50){
-            termini[duzinaNiza+1]=t;
-            duzinaNiza++;
+    void dodajTermin(const Termin& t){
+        termini.push_back(t);
         }
-    }
     void pregledTermina(){
         for(int i=0; i<50; i++){
             cout<<termini[i];
