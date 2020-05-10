@@ -52,7 +52,8 @@ int main()
     cout<<t1<<endl;
     cout<<k1<<endl;
     t1.citajFajl("terminnn.txt");
-    k1.zakaziTermin();
+    cout<<endl<<endl;
+    //k1.zakaziTermin();
     cout<<"Broj termina na kraju:"<<t1.getBrOj()<<endl;
     return 0;
 }

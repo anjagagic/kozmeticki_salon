@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589060042 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1589113509 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
 	"termin.hpp"
 	"vreme.hpp"
@@ -15,7 +15,7 @@
 	"pedikir.hpp"
 	"datum.hpp"
 
-1589061041 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
+1589113426 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
 	<fstream>
 	"vreme.hpp"
 	"datum.hpp"
