@@ -17,6 +17,12 @@ public:
     }
     int getSat()const{return sat;}
     int getMinut()const{return minut;}
+    bool uporediVreme(const Vreme&  v){
+        if (sat==v.sat && minut==v.minut){
+            return true;
+        }
+    return false;
+}
 };
 
 

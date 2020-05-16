@@ -22,6 +22,13 @@ public:
     int getDan()const {return dan;}
     int getMesec()const {return mesec;}
     int getGodina()const {return godina;}
+
+    bool uporediDatum(const Datum&  d){
+        if (dan==d.dan && mesec==d.mesec && godina==d.godina){
+            return true;
+        }
+    return false;
+}
 };
 
 #endif // DATUM_HPP_INCLUDED

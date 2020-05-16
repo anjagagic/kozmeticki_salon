@@ -44,7 +44,7 @@ public:
         }
         if (unos==3){
             Zaposleni z3("ime3", "prezime3", "username3", "sifra3", 3, PEDIKER);
-            Termin t(5, 4, 2020, 15, 30, false, 3);
+            Termin t(5, 4, 2020, 15, 30, true, 3);
             termini.push_back(t);
             z3.dodajTermin(t);
             cout<<"Termin zakazan"<<endl;
@@ -58,7 +58,7 @@ public:
         }
         if (unos==5){
             Zaposleni z5("ime5", "prezime5", "username5", "sifra5", 5, TREPAVICE);
-            Termin t(18, 4, 2020, 15, 30, false, 3);
+            Termin t(18, 4, 2020, 15, 30, true, 3);
             termini.push_back(t);
             z5.dodajTermin(t);
             cout<<"Termin zakazan"<<endl;

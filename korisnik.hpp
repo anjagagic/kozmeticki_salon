@@ -9,7 +9,7 @@ protected:
 public:
     Korisnik(){
         username="username";
-        sifra="123";
+        sifra="sifra";
         ime="ime";
         prezime="prezime";
     }

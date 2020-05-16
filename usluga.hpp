@@ -4,14 +4,13 @@
 class Usluga
 {
 protected:
-    Zaposleni zaposleni[10];
+    vector <Zaposleni> zaposleni;
     int cena;
 public:
-    Usluga(int c)
-    {
-        cena=c;
-    }
-    //ucitaj zaposlene iz fajla
+    Usluga(){
+    cena=0;}
+    Usluga(int c){cena=c;}
+    virtual void ispis()=0;
 };
 
 #endif // USLUGA_HPP_INCLUDED

@@ -43,7 +43,7 @@ public:
     int getBrOj()const{return BrOj;}
 
     Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0) {BrOj++;}
-    Termin(const Termin& t){BrOj++;}
+    Termin(const Termin& t){broj=t.broj; BrOj=t.BrOj; vreme=t.vreme; datum=t.datum; zauzet=t.zauzet; idZaposlenog=t.idZaposlenog;}
     Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id){BrOj++;}
     //friend ostream& operator<<(ostream& out, const Termin& t);
     ~Termin(){
@@ -54,7 +54,9 @@ public:
     citajTxt(nazivFajla);
     cout<<endl<<endl;
     }
+    /*void napraviTermin(Datum d, Vreme v, ){
 
+    }*/
 };
 int Termin::BrOj=0;
 #endif // TERMIN_HPP_INCLUDED

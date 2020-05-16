@@ -11,6 +11,12 @@ public:
     int getCena()const{return cena;}
     string getNazivUsluge()const{return nazivManikirskeUsluge;}
     friend ostream& operator<<(ostream out, const Manikir& m);
+    void unesiUslugu(string usluga){
+        nazivManikirskeUsluge=usluga;
+    }
+    void ispis(){
+        cout<<"Manikir, "<<nazivManikirskeUsluge<<", "<<cena<<endl;
+    }
 
 };
 

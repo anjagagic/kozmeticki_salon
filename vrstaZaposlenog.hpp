@@ -15,15 +15,15 @@ ostream& operator<<(ostream& izlaz2, const Vreme& v){
 }
 
 ostream& operator<<(ostream& out, const Termin& t){
-        out<<"TERMIN - ISPIS"<<endl;
+        out<<"TERMIN"<<endl;
         out<<"--------------"<<endl;
         out<<"Datum:"<<t.getDatum()<<endl;
         out<<"Vreme:"<<t.getVreme()<<endl;
         out<<"ID zaposlenog:"<<t.getID()<<endl;
         if(t.getZauzet()==1){
         out<<"Termin zauzet"<<endl;}
-        out<<"Termin nije zauzet"<<endl;
-        out<<"Broj:"<<t.getBroj()<<endl;
+        else{
+        out<<"Termin nije zauzet"<<endl;}
         out<<endl;
         return out;
 }
@@ -35,11 +35,7 @@ private:
     VrstaZaposlenog zanimanje;
     vector<Termin> termini;
 public:
-    Zaposleni()
-    {
-        id=0;
-        zanimanje=SMINKER;
-    }
+    Zaposleni():Korisnik("username", "sifra", "ime", "prezime"){id=1; zanimanje=SMINKER;}
 
     Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z){}
     friend ostream& operator<<(ostream& out, const Termin& t);
@@ -47,11 +43,33 @@ public:
     void dodajTermin(const Termin& t){
         termini.push_back(t);
         }
-    /*void pregledTermina(){
-        for(int i=0; i<50; i++){
-            cout<<termini[i];
+    bool izbaciTermin(const Termin& t){
+        for(auto it=termini.begin(); it<termini.end(); it++){
+            if(t.getZauzet()==true){
+                cout<<"Vas termin "<<t.getDatum()<<" u "<<t.getVreme()<<" je zauzet"<<endl;
+                termini.erase(it);
+                cout<<"TERMIN IZBRISAN"<<endl;
+                return true;
+            }
         }
-    }*/
+        return false;
+    }
+    void pregledTermina(){
+        cout<<endl;
+        cout<<"TERMINI PREGLED:"<<endl;
+        cout<<endl;
+        for(auto it=termini.begin(); it<termini.end(); it++){
+            cout<<*it<<endl;
+        }
+    }
+    bool pretragaTermina(const Termin& t){
+        for(auto it=termini.begin(); it<termini.end(); it++){
+        if(t.getDatum().uporediDatum(it->getDatum())==true && t.getVreme().uporediVreme(it->getVreme())==true){
+            return true;
+        }
+        return false;
+    }
+    }
     int getID()const{return id;}
     VrstaZaposlenog getZaposleni()const{return zanimanje;}
 

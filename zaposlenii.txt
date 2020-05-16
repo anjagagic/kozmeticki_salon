@@ -1,0 +1,7 @@
+Jelena,Milinkov,jela,1234,1,SMINKER
+Lena,Zotovic,lenka,0123,2,MANIKER
+Dusan,Kosovac,dule,3456,3,PEDIKER
+Milana,Korica,comi,7890,4,TREPAVICE
+Milos,Arsenovic,losmi,5678,5,MASER
+
+

@@ -10,6 +10,14 @@ public:
     Masaza(int c, bool t):Usluga(c), terapeutska(t) {}
     int getCena()const{return cena;}
     bool getT()const{return terapeutska;}
+    void ispis(){
+        if(terapeutska==true){
+        cout<<"Masaza, terapeutska, "<<cena<<endl;
+        }
+        else{
+        cout<<"Masaza, nije terapeutska, "<<cena<<endl;
+        }
+    }
 };
 
 #endif // MASAZA_HPP_INCLUDED

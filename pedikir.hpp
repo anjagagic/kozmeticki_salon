@@ -7,6 +7,13 @@ private:
     string nazivPedikirskeUsluge;
 public:
     Pedikir(int c, string usluga):Usluga(c), nazivPedikirskeUsluge(usluga) {}
+    void unesiUslugu(string usluga){
+        nazivPedikirskeUsluge=usluga;
+    }
+    void ispis(){
+        cout<<"Pedikir, "<<nazivPedikirskeUsluge<<", "<<cena<<endl;
+    }
+
 };
 
 #endif // PEDIKIR_HPP_INCLUDED
