@@ -65,6 +65,10 @@ public:
         }
 
     }
+   /* void login(){
+        Korisnik::login();
+
+    }*/
     friend ostream& operator<<(ostream& out, const Klijent& k);
 };
 

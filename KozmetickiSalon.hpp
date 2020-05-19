@@ -1,5 +1,6 @@
 #ifndef KOZMETICKISALON_HPP_INCLUDED
 #define KOZMETICKISALON_HPP_INCLUDED
+#include <fstream>
 #include "usluga.hpp"
 #include "vrstaZaposlenog.hpp"
 
@@ -11,6 +12,10 @@ private:
     vector <Zaposleni> zaposleni;
     vector <Klijent> klijenti;
 public:
+    string getNazivSalona()const{return nazivSalona;}
+    KozmetickiSalon(){
+        nazivSalona="Selfish";
+    }
     vector<string> splitSen(string str, char c=',')
 {
     string w = "";
@@ -73,13 +78,21 @@ void ucitajZaposlene(string n)
             cout<<*it<<endl;
         }
     }
-    Zaposleni pretragaTermina(const Zaposleni& z){
+    /*Zaposleni pretragaTermina(const Zaposleni& z){
         for(auto it=zaposleni.begin(); it<zaposleni.end(); it++){
         if(z.getID()==it->getID()){
             return z;
         }
         else
         cout<<"Zaposleni nije pronadjen"<<endl;
+    }
+    }*/
+    bool pretragaZaposlenih(const Zaposleni& z){
+        for(auto it=zaposleni.begin(); it<zaposleni.end(); it++){
+        if(z.getUsername()==it->getUsername() && z.getSifra()==it->getSifra()){
+            return true;
+        }
+        return false;
     }
     }
 };
