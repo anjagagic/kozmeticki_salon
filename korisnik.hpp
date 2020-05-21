@@ -20,13 +20,8 @@ public:
         ime=i;
         prezime=p;
     }
-    void login(){
-        cout<<"unesite username: "<<endl;
-        cin>>username;
-        cout<<"unesite sifru: "<<endl;
-        cin>>sifra;
-    }
-    void registracija(){
+
+    virtual void registracija(){
         cout<<"unesite ime: "<<endl;
         cin>>ime;
         cout<<"unesite prezime: "<<endl;
@@ -35,6 +30,7 @@ public:
         cin>>username;
         cout<<"unesite sifru: "<<endl;
         cin>>sifra;
+
         //ispis da li je uspesno ili nije
     }
     friend ostream& operator<<(ostream& out, const Korisnik& k);

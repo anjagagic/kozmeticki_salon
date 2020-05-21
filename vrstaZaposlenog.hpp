@@ -4,14 +4,16 @@
 #include "termin.hpp"
 #include "korisnik.hpp"
 
-ostream& operator<<(ostream& izlaz1, const Datum& d){
-    izlaz1<<d.getDan()<<"."<<d.getMesec()<<"."<<d.getGodina()<<"."<<endl;
-    return izlaz1;
+ostream& operator<<(ostream& out, const Datum& d){
+    out<<d.getDan()<<"."<<d.getMesec()<<"."<<d.getGodina()<<"."<<endl;
+    return out;
 }
 
-ostream& operator<<(ostream& izlaz2, const Vreme& v){
-    izlaz2<<v.getSat()<<":"<<v.getMinut()<<endl;
-    return izlaz2;
+ostream& operator<<(ostream& out, const Vreme& v){
+    out<<v.getSat();
+    out<<":";
+    out<<v.getMinut();
+    return out;
 }
 
 ostream& operator<<(ostream& out, const Termin& t){
@@ -35,11 +37,12 @@ private:
     VrstaZaposlenog zanimanje;
     vector<Termin> termini;
 public:
+    void setUsername(string un){username=un;}
+    void setSifra(string sf){sifra=sf;}
     Zaposleni():Korisnik("username", "sifra", "ime", "prezime"){id=1; zanimanje=SMINKER;}
-
     Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z){}
     friend ostream& operator<<(ostream& out, const Termin& t);
-
+    friend ostream& operator<<(ostream& out, const Zaposleni& z);
     void dodajTermin(const Termin& t){
         termini.push_back(t);
         }

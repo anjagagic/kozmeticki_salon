@@ -12,8 +12,10 @@ public:
         nazivSminkerskeUsluge=usluga;
     }
     void ispis(){
-        cout<<"Sminka, "<<nazivSminkerskeUsluge<<", "<<cena<<endl;
+        cout<<"1.Sminka"<<endl;
     }
+    string getUsluga(){return nazivSminkerskeUsluge;}
+    void setUsluga(string usluga){nazivSminkerskeUsluge=usluga;}
 };
 
 #endif // SMINKA_HPP_INCLUDED

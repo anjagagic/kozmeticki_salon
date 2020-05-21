@@ -15,6 +15,8 @@ public:
         sat=s;
         minut=m;
     }
+    void setSat(int s){sat=s;}
+    void setMinut(int m){minut=m;}
     int getSat()const{return sat;}
     int getMinut()const{return minut;}
     bool uporediVreme(const Vreme&  v){
@@ -23,6 +25,7 @@ public:
         }
     return false;
 }
+friend ostream& operator<<(ostream& out, Vreme& v);
 };
 
 

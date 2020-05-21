@@ -22,13 +22,16 @@ public:
     int getDan()const {return dan;}
     int getMesec()const {return mesec;}
     int getGodina()const {return godina;}
-
+    void setDan(int d){dan=d;}
+    void setMesec(int m){mesec=m;}
+    void setGodina(int g){godina=g;}
     bool uporediDatum(const Datum&  d){
         if (dan==d.dan && mesec==d.mesec && godina==d.godina){
             return true;
         }
     return false;
 }
+friend ostream& operator<<(ostream& out, Datum& d);
 };
 
 #endif // DATUM_HPP_INCLUDED

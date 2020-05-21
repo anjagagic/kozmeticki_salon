@@ -6,9 +6,13 @@ class Trepavice: public Usluga
 private:
     string nazivUsluge;
 public:
+    Trepavice():Usluga(0){}
     Trepavice(int c, string usluga):Usluga(c), nazivUsluge(usluga) {}
     void ispis(){
-        cout<<"Trepavice, "<<nazivUsluge<<", "<<cena<<endl;
+        cout<<"5.Trepavice"<<endl;
+    }
+    void unesiUslugu(string usluga){
+        nazivUsluge=usluga;
     }
 };
 

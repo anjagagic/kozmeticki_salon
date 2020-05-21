@@ -6,12 +6,13 @@ class Pedikir: public Usluga
 private:
     string nazivPedikirskeUsluge;
 public:
+    Pedikir():Usluga(0){}
     Pedikir(int c, string usluga):Usluga(c), nazivPedikirskeUsluge(usluga) {}
     void unesiUslugu(string usluga){
         nazivPedikirskeUsluge=usluga;
     }
     void ispis(){
-        cout<<"Pedikir, "<<nazivPedikirskeUsluge<<", "<<cena<<endl;
+        cout<<"3.Pedikir"<<endl;
     }
 
 };

@@ -15,7 +15,7 @@ public:
         nazivManikirskeUsluge=usluga;
     }
     void ispis(){
-        cout<<"Manikir, "<<nazivManikirskeUsluge<<", "<<cena<<endl;
+        cout<<"4.Manikir"<<endl;
     }
 
 };

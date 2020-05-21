@@ -12,10 +12,10 @@ public:
     bool getT()const{return terapeutska;}
     void ispis(){
         if(terapeutska==true){
-        cout<<"Masaza, terapeutska, "<<cena<<endl;
+        cout<<"2.Masaza"<<endl;
         }
         else{
-        cout<<"Masaza, nije terapeutska, "<<cena<<endl;
+        cout<<"2.Masaza"<<endl;
         }
     }
 };
