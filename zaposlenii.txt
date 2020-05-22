@@ -1,7 +1,8 @@
 Jelena,Milinkov,jela,j,1,SMINKER
-Lena,Zotovic,lenka,l,2,MANIKER
+Milos,Arsenovic,losmi,a,2,MASER
 Dusan,Kosovac,dule,d,3,PEDIKER
-Milana,Korica,comi,m,4,TREPAVICE
-Milos,Arsenovic,losmi,a,5,MASER
+Lena,Zotovic,lenka,l,4,MANIKER
+Milana,Korica,comi,m,5,TREPAVICE
+
 
 

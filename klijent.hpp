@@ -34,7 +34,7 @@ public:
                             cin>>iidd;
                             Termin t1(da, me, go, sa, mi, false, iidd);
                             for(auto it=termini.begin(); it<termini.end(); it++){
-                                termini.push_back(termin);
+                                termini.push_back(t1);
                             }
                             return t1;
 
