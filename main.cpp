@@ -23,6 +23,7 @@ using namespace std;
 
 void pregledTerminaZaposleni(vector <Zaposleni> sviZaposleni, string username, string sifra){
       for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
+
           if(it->getUsername()==username && it->getSifra()==sifra){
              it->pregledTermina();
           }
@@ -310,15 +311,14 @@ int main()
                         k.setTerminZaposlenog(z1, termin);
                         cout<<"TERMIN DODAT"<<endl;
                         ///pisanje u fajl
-                        string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
+                        string ULAZ1, ULAZ2, ULAZ3;
                         string ULAZ;
                         for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++)
                         {
                             ULAZ1=it->getIme();
                             ULAZ2=it->getPrezime();
                             ULAZ3=to_string(it->getID());
-                            ULAZ4=VtoS(it->getZaposleni());
-                            ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
+                            ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3;
                             pisiTxt("ucitaniZaposleni.txt", ULAZ, 'a');
                         }
                         Sleep(1000000);
