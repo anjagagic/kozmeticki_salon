@@ -93,7 +93,12 @@ public:
         cout<<"uspesno logovanje"<<endl;
         //ili neuspesno
     }*/
-
+    bool uporediZaposlene(const Zaposleni&  z){
+        if (ime==z.ime && prezime==z.prezime && username==z.username && sifra==z.sifra && id==z.id && zanimanje==z.zanimanje){
+            return true;
+        }
+    return false;
+}
 
 
 };

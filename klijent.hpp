@@ -21,51 +21,20 @@ public:
     Klijent():Korisnik("username", "sifra", "ime", "prezime"){}
     Klijent(string u, string s, string i, string p):Korisnik(u, s, i, p){}
 
-    Termin zakaziTermin(Zaposleni& z){
-        Usluga* usluge[100];
-                        Sminka s1;
-                        Masaza m1;
-                        Pedikir p1;
-                        Manikir ma1;
-                        Trepavice tre1;
-                        usluge[0]=&s1;
-                        usluge[1]=&m1;
-                        usluge[2]=&p1;
-                        usluge[3]=&ma1;
-                        usluge[4]=&tre1;
-                        cout<<"Odaberite uslugu:"<<endl;
-                        for (int i=0; i<=4; i++)
-                        {
-                            usluge[i]->ispis();
-                        }
-
-                        int usluga;
-                        cin>>usluga;
+    Termin zakaziTermin(Zaposleni& z, int usluga){
                         if(usluga==1)
                         {
-                            cout<<"Unesite sminkersku uslugu:"<<endl;
-                            string u;
-                            cin>>u;
-                            s1.setUsluga(u);
                             int da,me,go,sa,mi;
                             cout<<"Unesite datum-> dan: "; cin>>da; cout<<endl;
                             cout<<"                mesec: "; cin>>me; cout<<endl;
                             cout<<"                godina: "; cin>>go; cout<<endl;
                             cout<<"Unesite vreme-> sat: "; cin>>sa; cout<<endl;
                             cout<<"                minut: "; cin>>mi; cout<<endl;
-                            cout<<"Odaberite zaposlenog:"<<endl;
-                            if(z.getZaposleni()==SMINKER){
-                                cout<<z;
-                            }
                             cout<<"Unesite ID zeljenog zaposlenog"<<endl;
                             int iidd;
                             cin>>iidd;
                             Termin t1(da, me, go, sa, mi, false, iidd);
                             termini.push_back(t1);
-                            for(auto it=termini.begin(); it<termini.end(); it++){
-                                cout<<"ispis termina"<<endl;
-                                cout<<*it<<endl;
-                            }
                             return t1;
                         }
     }
