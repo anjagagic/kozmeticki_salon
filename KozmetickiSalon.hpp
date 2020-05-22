@@ -167,14 +167,15 @@ public:
     }*/
     bool pretragaZaposlenih(const Zaposleni& z)
     {
-        for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
+        for(auto it=zaposleni.begin(); it!=zaposleni.end(); it++)
         {
             if(z.getUsername()==it->getUsername() && z.getSifra()==it->getSifra())
             {
                 return true;
             }
+            else{
+            return false;}
         }
-        return false;
     }
 
     void ucitajKlijente(string n)

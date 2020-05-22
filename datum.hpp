@@ -29,7 +29,8 @@ public:
         if (dan==d.dan && mesec==d.mesec && godina==d.godina){
             return true;
         }
-    return false;
+        else{
+    return false;}
 }
 friend ostream& operator<<(ostream& out, Datum& d);
 };

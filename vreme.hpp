@@ -23,7 +23,7 @@ public:
         if (sat==v.sat && minut==v.minut){
             return true;
         }
-    return false;
+    else {return false;}
 }
 friend ostream& operator<<(ostream& out, Vreme& v);
 };
