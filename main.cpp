@@ -20,6 +20,17 @@ using namespace std;
 #include <unordered_set>
 #include <fstream>
 #include <string>
+
+void pregledTerminaZaposleni(vector <Zaposleni> sviZaposleni, string username, string sifra){
+      for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
+          if(it->getUsername()==username && it->getSifra()==sifra){
+             it->pregledTermina();
+          }
+          else{
+            cout<<"Zaposleni nije prondjen"<<endl;
+          }
+    }
+}
 string VtoS(VrstaZaposlenog v)
 {
     if(v==0)
@@ -111,7 +122,7 @@ ostream& operator<<(ostream& out, const Zaposleni& z)
     }
     if(z.getZaposleni()==1)
     {
-        out<<"TREPAVICE"<<endl;
+        out<<"MASER"<<endl;
     }
     if(z.getZaposleni()==2)
     {
@@ -123,7 +134,7 @@ ostream& operator<<(ostream& out, const Zaposleni& z)
     }
     if(z.getZaposleni()==4)
     {
-        out<<"MASER"<<endl;
+        out<<"TREPAVICE"<<endl;
     }
     out<<endl;
     return out;
@@ -443,6 +454,7 @@ int main()
             cout<<"Uloguj se:"<<endl;
             do
             {
+                vector<Zaposleni> sviZaposleni = ucitajSveZaposlene(k);
                 cout<<"unesite username: "<<endl;
                 string u,s;
                 cin>>u;
@@ -462,7 +474,7 @@ int main()
                         cin>>odabir4;
                         if(odabir4==1)
                         {
-                            z1.pregledTermina();
+                            pregledTerminaZaposleni(sviZaposleni, u, s);
                             Sleep(10000);
                         }
                         else if(odabir4==2)

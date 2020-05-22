@@ -10,21 +10,6 @@
 #include "masaza.hpp"
 #include "pedikir.hpp"
 
-bool jedinstven(vector<Termin> ter, const Termin& t)
-{
-    for(auto it=ter.begin(); it!=ter.end(); it++)
-    {
-        if(t.getDatum().uporediDatum(it->getDatum())==true && t.getVreme().uporediVreme(it->getVreme())==true)
-        {
-            return true;
-        }
-        else
-        {
-            cout<<"else"<<endl;
-            return false;
-        }
-    }
-}
 
 class Klijent: public Korisnik
 {
@@ -44,9 +29,6 @@ public:
 
     Termin zakaziTermin()
     {
-        bool j;
-        do
-        {
             int da,me,go,sa,mi;
             cout<<"Unesite datum-> dan: ";
             cin>>da;
@@ -67,21 +49,13 @@ public:
             int iidd;
             cin>>iidd;
             Termin t1(da, me, go, sa, mi, false, iidd);
-            j=jedinstven(termini, t1);
-            if(j==true)
-            {
-                cout<<"Unesite ponovo, termin postoji"<<endl;
-            }
-            if(j==false)
-            {
                 for(auto it=termini.begin(); it<termini.end(); it++)
                 {
-                    termini.push_back(t1);
+                    termini.push_back(t1);}
                     return t1;
-                }
-            }
-        }
-        while(j==true);
+
+
+
 
     }
     friend ostream& operator<<(ostream& out, const Klijent& k);

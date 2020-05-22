@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590184350 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1590189283 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
 	<stdlib.h>
 	<windows.h>
@@ -38,7 +38,7 @@
 1590184695 c:\users\hp\desktop\programing\kozmetickisalon\korisnik.hpp
 	<vector>
 
-1590184695 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
+1590187719 c:\users\hp\desktop\programing\kozmetickisalon\klijent.hpp
 	"vrstaZaposlenog.hpp"
 	"termin.hpp"
 	"manikir.hpp"
