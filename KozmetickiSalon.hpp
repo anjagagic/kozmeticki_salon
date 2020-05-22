@@ -216,7 +216,7 @@ public:
         }
         return false;
     }
-    void setTerminZaposlenog(Zaposleni &z1, Termin& termin){
+    void setTerminZaposlenog(const Zaposleni &z1, Termin& termin){
         for (auto it=zaposleni.begin(); it!=zaposleni.end(); it++){
             if (z1.getIme()==it->getIme() && z1.getPrezime()==it->getPrezime() && z1.getID()==it->getID() && z1.getZaposleni()==it->getZaposleni()){
             it->dodajTermin(termin);

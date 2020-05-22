@@ -18,6 +18,39 @@ using namespace std;
 #include "datum.hpp"
 #include <vector>
 #include <unordered_set>
+#include <fstream>
+#include <string>
+
+string VtoS(VrstaZaposlenog v)
+    {
+        if(v==0){
+             string s="sminker";
+            return s;}
+        else if(v==1){
+             string s="maser";
+            return s;}
+        else if(v==2){
+             string s="pediker";
+            return s;}
+        else if(v==3){
+             string s="maniker";
+            return s;}
+        else if(v==4){
+             string s="trepavice";
+            return s;}
+    }
+
+void upisiZaposlenog(string nazivFajla, string tekst, char mode='w')
+{
+    ofstream fajl;
+    if (mode=='a'){
+        fajl.open (nazivFajla, ios_base::app);
+    }else{
+        fajl.open (nazivFajla);
+    }
+    fajl<<tekst<<endl;
+
+}
 
 void pisiTxt(string nazivFajla, string tekst1, char mode='w')
 {
@@ -240,7 +273,6 @@ int main()
                                     tre1.setUsluga(u);
                                 }
                                 vector<Zaposleni> odabraniZaposleni = pretraziZaposlene(sviZaposleni, usluga);
-                                ///kad posaljem uslugu, onda ispise recimo 5, ali ako posaljem usluga-1 ispise da je broj 3
                                 for(auto it=odabraniZaposleni.begin(); it<odabraniZaposleni.end(); it++)
                                 {
                                     cout<<"ispis zaposlenog"<<endl;
@@ -253,6 +285,17 @@ int main()
                                 Zaposleni z1 = odabraniZaposleni.at(redniBroj-1);
                                 k.setTerminZaposlenog(z1, termin);
                                 cout<<"TERMIN DODAT"<<endl;
+                                 ///pisanje u fajl
+                                string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
+                                string ULAZ;
+                                for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
+                                ULAZ1=it->getIme();
+                                ULAZ2=it->getPrezime();
+                                ULAZ3=to_string(it->getID());
+                                ULAZ4=VtoS(it->getZaposleni());
+                                ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
+                                pisiTxt("ucitaniZaposleni.txt", ULAZ);
+                                }
                                 Sleep(1000000);
                             }
                              else if(odabir3==2)
@@ -348,7 +391,20 @@ int main()
                                 Zaposleni z1 = odabraniZaposleni.at(redniBroj-1);
                                 k.setTerminZaposlenog(z1, termin);
                                 cout<<"TERMIN DODAT"<<endl;
+                                ///pisanje u fajl
+                                string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
+                                string ULAZ;
+                                for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
+                                ULAZ1=it->getIme();
+                                ULAZ2=it->getPrezime();
+                                ULAZ3=to_string(it->getID());
+                                ULAZ4=VtoS(it->getZaposleni());
+                                ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
+                                pisiTxt("ucitaniZaposleni.txt", ULAZ);
+                                }
+
                                 Sleep(5000);
+
                             }
                             else if(odabir3==2)
                             {
@@ -413,50 +469,5 @@ int main()
 
         }
         while(odabir1!=3);
-        /*Termin t1(18, 12, 2020, 15, 30, true, 1);
-        Termin t2(1, 1, 1, 0, 0, false, 0);
-        Klijent k1;
-        Zaposleni z1;
-        z1.pregledTermina();
-        cout<<"Broj termina:"<<t1.getBrOj()<<endl;
-        k1.zakaziTermin();
-        cout<<"Broj termina posle:"<<t1.getBrOj()<<endl;
-        z1.dodajTermin(t1);
-        cout<<"********Termin dodat"<<endl;
-        z1.pregledTermina();
-        z1.dodajTermin(t2);
-        cout<<"**********Termin dodat"<<endl;
-        z1.pregledTermina();
-        z1.izbaciTermin(t1);
-        cout<<"**********Izbacivanje"<<endl;
-        z1.pregledTermina();
-        if(z1.pretragaTermina(t2)==true){
-            cout<<"Element pronadjen"<<t2<<endl<<endl;
-        }
-        else cout<<"Element nije pronadjen"<<endl<<endl;;
-        Usluga* usluge[100];
-        Sminka s1(500, "svadba");
-        Masaza m1(300, true);
-        Pedikir p1(400, "nokti");
-        Manikir ma1(600, "gel lak");
-        Trepavice tre1(1500, "svilene");
-        usluge[0]=&s1;
-        usluge[1]=&m1;
-        usluge[2]=&p1;
-        usluge[3]=&ma1;
-        usluge[4]=&tre1;
-        cout<<"Ispis dodatih usluga:"<<endl;
-        for (int i=0; i<=4; i++){
-            usluge[i]->ispis();
-        }
-        cout<<endl<<endl;
-        KozmetickiSalon koz1;
-        koz1.dodajZaposlene();
-        koz1.ispisiZaposlene();
-        Zaposleni z2("Milana", "Korica", "comi", "m", 4, TREPAVICE);
-        if(koz1.pretragaZaposlenih(z2)==true){
-            cout<<"Pronadjen"<<endl;
-        }
-        else cout<<"Nije pronadjen"<<endl;*/
         return 0;
     }
