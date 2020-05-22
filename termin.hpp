@@ -41,6 +41,7 @@ public:
     bool getZauzet()const{return zauzet;}
     int getBroj()const{return broj;}
     int getBrOj()const{return BrOj;}
+    void setZauzet(bool z){zauzet=z;}
 
     Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0) {BrOj++;}
     Termin(const Termin& t){broj=t.broj; BrOj=t.BrOj; vreme=t.vreme; datum=t.datum; zauzet=t.zauzet; idZaposlenog=t.idZaposlenog;}

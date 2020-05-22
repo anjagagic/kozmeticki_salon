@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590131124 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
+1590140491 source:c:\users\hp\desktop\programing\kozmetickisalon\main.cpp
 	<iostream>
 	<stdlib.h>
 	"termin.hpp"
@@ -18,7 +18,7 @@
 	<vector>
 	<unordered_set>
 
-1589993092 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
+1590140491 c:\users\hp\desktop\programing\kozmetickisalon\termin.hpp
 	<fstream>
 	"vreme.hpp"
 	"datum.hpp"
@@ -57,7 +57,7 @@
 1589927817 c:\users\hp\desktop\programing\kozmetickisalon\trepavice.hpp
 	"usluga.hpp"
 
-1590131021 c:\users\hp\desktop\programing\kozmetickisalon\kozmetickisalon.hpp
+1590140491 c:\users\hp\desktop\programing\kozmetickisalon\kozmetickisalon.hpp
 	<fstream>
 	"usluga.hpp"
 	"vrstaZaposlenog.hpp"

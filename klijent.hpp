@@ -37,6 +37,7 @@ public:
                             termini.push_back(t1);
                             return t1;
                         }
+
     }
         /*if (usluga==2){
             Zaposleni z2("ime2", "prezime2", "username2", "sifra2", 2, MANIKER);

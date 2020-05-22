@@ -219,7 +219,7 @@ public:
         for (auto it=zaposleni.begin(); it!=zaposleni.end(); it++){
             if (z1.getIme()==it->getIme() && z1.getPrezime()==it->getPrezime() && z1.getID()==it->getID() && z1.getZaposleni()==it->getZaposleni()){
             it->dodajTermin(termin);
-            cout<<"usepesno"<<endl;
+            termin.setZauzet(true);
             }
         }
     }
