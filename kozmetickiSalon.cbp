@@ -45,6 +45,7 @@
 		<Unit filename="termin.hpp" />
 		<Unit filename="terminnn.txt" />
 		<Unit filename="trepavice.hpp" />
+		<Unit filename="ucitaniZaposleni.txt" />
 		<Unit filename="usluga.hpp" />
 		<Unit filename="vreme.hpp" />
 		<Unit filename="vrstaZaposlenog.hpp" />

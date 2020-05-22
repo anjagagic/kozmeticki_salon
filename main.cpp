@@ -20,32 +20,44 @@ using namespace std;
 #include <unordered_set>
 #include <fstream>
 #include <string>
-
 string VtoS(VrstaZaposlenog v)
+{
+    if(v==0)
     {
-        if(v==0){
-             string s="sminker";
-            return s;}
-        else if(v==1){
-             string s="maser";
-            return s;}
-        else if(v==2){
-             string s="pediker";
-            return s;}
-        else if(v==3){
-             string s="maniker";
-            return s;}
-        else if(v==4){
-             string s="trepavice";
-            return s;}
+        string s="sminker";
+        return s;
     }
+    else if(v==1)
+    {
+        string s="maser";
+        return s;
+    }
+    else if(v==2)
+    {
+        string s="pediker";
+        return s;
+    }
+    else if(v==3)
+    {
+        string s="maniker";
+        return s;
+    }
+    else if(v==4)
+    {
+        string s="trepavice";
+        return s;
+    }
+}
 
 void upisiZaposlenog(string nazivFajla, string tekst, char mode='w')
 {
     ofstream fajl;
-    if (mode=='a'){
+    if (mode=='a')
+    {
         fajl.open (nazivFajla, ios_base::app);
-    }else{
+    }
+    else
+    {
         fajl.open (nazivFajla);
     }
     fajl<<tekst<<endl;
@@ -168,7 +180,8 @@ vector<Zaposleni> pretraziZaposlene(vector<Zaposleni>sviZaposleni, int usluga)
     }
     return temp;
 }
-
+///****************************************************************************************************************************
+///****************************************************************************************************************************
 int main()
 {
     int odabir1;
@@ -214,97 +227,98 @@ int main()
                 ulaz = ulaz1+","+ulaz2+","+ulaz3+","+ulaz4;
                 pisiTxt("klijentii.txt", ulaz, 'a');
                 system("CLS");
-                    vector<Zaposleni> sviZaposleni = ucitajSveZaposlene(k);
+                vector<Zaposleni> sviZaposleni = ucitajSveZaposlene(k);
 
-                        do
+                do
+                {
+                    system("CLS");
+                    cout<<"Dobrodosli!"<<endl;
+                    cout<<"Izaberite opciju: 1 - zakazi termin"<<endl;
+                    cout<<"                  2 - odjavi se"<<endl;
+                    cin>>odabir3;
+                    if(odabir3==1)
+                    {
+                        Usluga* usluge[100];
+                        Sminka s1;
+                        Masaza m1;
+                        Pedikir p1;
+                        Manikir ma1;
+                        Trepavice tre1;
+                        usluge[0]=&s1;
+                        usluge[1]=&m1;
+                        usluge[2]=&p1;
+                        usluge[3]=&ma1;
+                        usluge[4]=&tre1;
+                        cout<<"Odaberite uslugu:"<<endl;
+                        for (int i=0; i<=4; i++)
                         {
-                            system("CLS");
-                            cout<<"Dobrodosli!"<<endl;
-                            cout<<"Izaberite opciju: 1 - zakazi termin"<<endl;
-                            cout<<"                  2 - odjavi se"<<endl;
-                            cin>>odabir3;
-                            if(odabir3==1)
-                            {
-                                Usluga* usluge[100];
-                                Sminka s1;
-                                Masaza m1;
-                                Pedikir p1;
-                                Manikir ma1;
-                                Trepavice tre1;
-                                usluge[0]=&s1;
-                                usluge[1]=&m1;
-                                usluge[2]=&p1;
-                                usluge[3]=&ma1;
-                                usluge[4]=&tre1;
-                                cout<<"Odaberite uslugu:"<<endl;
-                                for (int i=0; i<=4; i++)
-                                {
-                                    usluge[i]->ispis();
-                                }
-                                int usluga;
-                                cout<<"unesite uslugu:"<<endl;
-                                cin>>usluga;
-                                if(usluga==1)
-                                {
-                                    cout<<"Unesite sminkersku uslugu:"<<endl;
-                                    string u;
-                                    cin>>u;
-                                    s1.setUsluga(u);
-                                }
-                                if(usluga==3)
-                                {
-                                    cout<<"Unesite pedikirsku uslugu:"<<endl;
-                                    string u;
-                                    cin>>u;
-                                    p1.setUsluga(u);
-                                }
-                                if(usluga==4)
-                                {
-                                    cout<<"Unesite manikirsku uslugu:"<<endl;
-                                    string u;
-                                    cin>>u;
-                                    ma1.setUsluga(u);
-                                }
-                                if(usluga==5)
-                                {
-                                    cout<<"Unesite uslugu za trepavice:"<<endl;
-                                    string u;
-                                    cin>>u;
-                                    tre1.setUsluga(u);
-                                }
-                                vector<Zaposleni> odabraniZaposleni = pretraziZaposlene(sviZaposleni, usluga);
-                                for(auto it=odabraniZaposleni.begin(); it<odabraniZaposleni.end(); it++)
-                                {
-                                    cout<<"ispis zaposlenog"<<endl;
-                                    cout<<*it<<endl;
-                                }
-                                int redniBroj;
-                                cout<<"Unesi redni broj zaposlenog"<<endl;
-                                cin>>redniBroj;
-                                Termin termin=k1.zakaziTermin(z1);
-                                Zaposleni z1 = odabraniZaposleni.at(redniBroj-1);
-                                k.setTerminZaposlenog(z1, termin);
-                                cout<<"TERMIN DODAT"<<endl;
-                                 ///pisanje u fajl
-                                string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
-                                string ULAZ;
-                                for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
-                                ULAZ1=it->getIme();
-                                ULAZ2=it->getPrezime();
-                                ULAZ3=to_string(it->getID());
-                                ULAZ4=VtoS(it->getZaposleni());
-                                ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
-                                pisiTxt("ucitaniZaposleni.txt", ULAZ);
-                                }
-                                Sleep(1000000);
-                            }
-                             else if(odabir3==2)
-                            {
-                                cout<<"odjavljivanje..."<<endl;
-                                system("cls");
-                            }
+                            usluge[i]->ispis();
                         }
-                        while(odabir3!=2);
+                        int usluga;
+                        cout<<"unesite uslugu:"<<endl;
+                        cin>>usluga;
+                        if(usluga==1)
+                        {
+                            cout<<"Unesite sminkersku uslugu:"<<endl;
+                            string u;
+                            cin>>u;
+                            s1.setUsluga(u);
+                        }
+                        if(usluga==3)
+                        {
+                            cout<<"Unesite pedikirsku uslugu:"<<endl;
+                            string u;
+                            cin>>u;
+                            p1.setUsluga(u);
+                        }
+                        if(usluga==4)
+                        {
+                            cout<<"Unesite manikirsku uslugu:"<<endl;
+                            string u;
+                            cin>>u;
+                            ma1.setUsluga(u);
+                        }
+                        if(usluga==5)
+                        {
+                            cout<<"Unesite uslugu za trepavice:"<<endl;
+                            string u;
+                            cin>>u;
+                            tre1.setUsluga(u);
+                        }
+                        vector<Zaposleni> odabraniZaposleni = pretraziZaposlene(sviZaposleni, usluga);
+                        for(auto it=odabraniZaposleni.begin(); it<odabraniZaposleni.end(); it++)
+                        {
+                            cout<<"ispis zaposlenog"<<endl;
+                            cout<<*it<<endl;
+                        }
+                        int redniBroj;
+                        cout<<"Unesi redni broj zaposlenog"<<endl;
+                        cin>>redniBroj;
+                        Termin termin=k1.zakaziTermin();
+                        Zaposleni z1 = odabraniZaposleni.at(redniBroj-1);
+                        k.setTerminZaposlenog(z1, termin);
+                        cout<<"TERMIN DODAT"<<endl;
+                        ///pisanje u fajl
+                        string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
+                        string ULAZ;
+                        for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++)
+                        {
+                            ULAZ1=it->getIme();
+                            ULAZ2=it->getPrezime();
+                            ULAZ3=to_string(it->getID());
+                            ULAZ4=VtoS(it->getZaposleni());
+                            ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
+                            pisiTxt("ucitaniZaposleni.txt", ULAZ, 'a');
+                        }
+                        Sleep(1000000);
+                    }
+                    else if(odabir3==2)
+                    {
+                        cout<<"odjavljivanje..."<<endl;
+                        system("cls");
+                    }
+                }
+                while(odabir3!=2);
             }
 
 ///LOGOVANJE
@@ -387,20 +401,20 @@ int main()
                                 int redniBroj;
                                 cout<<"Unesi redni broj zaposlenog"<<endl;
                                 cin>>redniBroj;
-                                Termin termin=k1.zakaziTermin(z1);
+                                Termin termin=k1.zakaziTermin();
                                 Zaposleni z1 = odabraniZaposleni.at(redniBroj-1);
                                 k.setTerminZaposlenog(z1, termin);
                                 cout<<"TERMIN DODAT"<<endl;
                                 ///pisanje u fajl
                                 string ULAZ1, ULAZ2, ULAZ3, ULAZ4;
                                 string ULAZ;
-                                for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++){
-                                ULAZ1=it->getIme();
-                                ULAZ2=it->getPrezime();
-                                ULAZ3=to_string(it->getID());
-                                ULAZ4=VtoS(it->getZaposleni());
-                                ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3+","+ULAZ4;
-                                pisiTxt("ucitaniZaposleni.txt", ULAZ);
+                                for(auto it=sviZaposleni.begin(); it<sviZaposleni.end(); it++)
+                                {
+                                    ULAZ1=it->getIme();
+                                    ULAZ2=it->getPrezime();
+                                    ULAZ3=to_string(it->getID());
+                                    ULAZ = ULAZ1+","+ULAZ2+","+ULAZ3;
+                                    pisiTxt("ucitaniZaposleni.txt", ULAZ, 'a');
                                 }
 
                                 Sleep(5000);
@@ -423,51 +437,50 @@ int main()
             }
         }
 ///ZAPOSLENI
-            else if(odabir1==2)
+        else if(odabir1==2)
+        {
+            system ("CLS");
+            cout<<"Uloguj se:"<<endl;
+            do
             {
-                system ("CLS");
-                cout<<"Uloguj se:"<<endl;
-                do
+                cout<<"unesite username: "<<endl;
+                string u,s;
+                cin>>u;
+                z1.setUsername(u);
+                cout<<"unesite sifru: "<<endl;
+                cin>>s;
+                z1.setSifra(s);
+                if(k.pretragaZaposlenih(z1)==true)
                 {
-                    cout<<"unesite username: "<<endl;
-                    string u,s;
-                    cin>>u;
-                    z1.setUsername(u);
-                    cout<<"unesite sifru: "<<endl;
-                    cin>>s;
-                    z1.setSifra(s);
-                    if(k.pretragaZaposlenih(z1)==true)
+                    do
                     {
-                        do
+                        system("CLS");
+                        cout<<"Dobrodosli!"<<endl;
+                        cout<<"Izaberite opciju: 1 - pregled termina"<<endl;
+                        cout<<"                  2 - odjavi se"<<endl;
+                        cout<<"Unesite: ";
+                        cin>>odabir4;
+                        if(odabir4==1)
                         {
-                            system("CLS");
-                            cout<<"Dobrodosli!"<<endl;
-                            cout<<"Izaberite opciju: 1 - pregled termina"<<endl;
-                            cout<<"                  2 - odjavi se"<<endl;
-                            cout<<"Unesite: ";
-                            cin>>odabir4;
-                            if(odabir4==1)
-                            {
-                                z1.pregledTermina();
-                                ///if(z1.getZaposleni()==SMINKER){}
-                                Sleep(10000);
-                            }
-                            else if(odabir4==2)
-                            {
-
-                                cout<<"odjavljivanje...";
-                                system("CLS");
-                            }
+                            z1.pregledTermina();
+                            Sleep(10000);
                         }
-                        while(odabir4!=2);
-                    }
-                    else
-                        cout<<"Pogresno ste uneli, pokusajte ponovo"<<endl;
-                }
-                while(k.pretragaZaposlenih(z1)==false);
-            }
+                        else if(odabir4==2)
+                        {
 
+                            cout<<"odjavljivanje...";
+                            system("CLS");
+                        }
+                    }
+                    while(odabir4!=2);
+                }
+                else
+                    cout<<"Pogresno ste uneli, pokusajte ponovo"<<endl;
+            }
+            while(k.pretragaZaposlenih(z1)==false);
         }
-        while(odabir1!=3);
-        return 0;
+
     }
+    while(odabir1!=3);
+    return 0;
+}

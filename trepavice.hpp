@@ -6,12 +6,16 @@ class Trepavice: public Usluga
 private:
     string nazivUsluge;
 public:
-    Trepavice():Usluga(0){}
+    Trepavice():Usluga(0) {}
     Trepavice(int c, string usluga):Usluga(c), nazivUsluge(usluga) {}
-    void ispis(){
+    void ispis()
+    {
         cout<<"5.Trepavice"<<endl;
     }
-    void setUsluga(string u){nazivUsluge=u;}
+    void setUsluga(string u)
+    {
+        nazivUsluge=u;
+    }
 };
 
 #endif // TREPAVICE_HPP_INCLUDED

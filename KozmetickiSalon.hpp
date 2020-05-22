@@ -13,7 +13,10 @@ private:
     vector <Zaposleni> zaposleni;
     vector <Klijent> klijenti;
 public:
-    vector<Zaposleni> const &getZaposlenii()const{return zaposleni;}
+    vector<Zaposleni> const &getZaposlenii()const
+    {
+        return zaposleni;
+    }
     string getNazivSalona()const
     {
         return nazivSalona;
@@ -83,7 +86,6 @@ public:
         string fajl="zaposlenii.txt";
         ucitajZaposlene("zaposlenii.txt");
     }
-
     void ispisiZaposlene()
     {
         cout<<"Zaposleni:"<<endl;
@@ -92,45 +94,55 @@ public:
             cout<<*it<<endl;
         }
     }
-    void ispisiSminkere(){
+    void ispisiSminkere()
+    {
         for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
         {
-            if(it->getZaposleni()==SMINKER){
+            if(it->getZaposleni()==SMINKER)
+            {
                 cout<<*it<<endl;
             }
 
         }
-    }void ispisiManikere(){
+    } void ispisiManikere()
+    {
         for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
         {
-            if(it->getZaposleni()==MANIKER){
-                cout<<*it<<endl;
-            }
-
-        }
-    }
-    void ispisiPedikere(){
-        for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
-        {
-            if(it->getZaposleni()==PEDIKER){
+            if(it->getZaposleni()==MANIKER)
+            {
                 cout<<*it<<endl;
             }
 
         }
     }
-    void ispisiMasere(){
+    void ispisiPedikere()
+    {
         for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
         {
-            if(it->getZaposleni()==MASER){
+            if(it->getZaposleni()==PEDIKER)
+            {
                 cout<<*it<<endl;
             }
 
         }
     }
-    void ispisiTrepavice(){
+    void ispisiMasere()
+    {
         for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
         {
-            if(it->getZaposleni()==TREPAVICE){
+            if(it->getZaposleni()==MASER)
+            {
+                cout<<*it<<endl;
+            }
+
+        }
+    }
+    void ispisiTrepavice()
+    {
+        for(auto it=zaposleni.begin(); it<zaposleni.end(); it++)
+        {
+            if(it->getZaposleni()==TREPAVICE)
+            {
                 cout<<*it<<endl;
             }
 
@@ -173,8 +185,10 @@ public:
             {
                 return true;
             }
-            else{
-            return false;}
+            else
+            {
+                return false;
+            }
         }
     }
 
@@ -216,14 +230,18 @@ public:
         }
         return false;
     }
-    void setTerminZaposlenog(const Zaposleni &z1, Termin& termin){
-        for (auto it=zaposleni.begin(); it!=zaposleni.end(); it++){
-            if (z1.getIme()==it->getIme() && z1.getPrezime()==it->getPrezime() && z1.getID()==it->getID() && z1.getZaposleni()==it->getZaposleni()){
-            it->dodajTermin(termin);
-            termin.setZauzet(true);
+    void setTerminZaposlenog(const Zaposleni &z1, Termin& termin)
+    {
+        for (auto it=zaposleni.begin(); it!=zaposleni.end(); it++)
+        {
+            if (z1.getIme()==it->getIme() && z1.getPrezime()==it->getPrezime() && z1.getID()==it->getID() && z1.getZaposleni()==it->getZaposleni())
+            {
+                it->dodajTermin(termin);
+                termin.setZauzet(true);
             }
         }
     }
+
 
 };
 

@@ -6,15 +6,25 @@ class Manikir: public Usluga
 private:
     string nazivManikirskeUsluge;
 public:
-    Manikir():Usluga(0), nazivManikirskeUsluge("feniranje"){}
+    Manikir():Usluga(0), nazivManikirskeUsluge("feniranje") {}
     Manikir(int c, string usluga):Usluga(c), nazivManikirskeUsluge(usluga) {}
-    int getCena()const{return cena;}
-    string getNazivUsluge()const{return nazivManikirskeUsluge;}
+    int getCena()const
+    {
+        return cena;
+    }
+    string getNazivUsluge()const
+    {
+        return nazivManikirskeUsluge;
+    }
     friend ostream& operator<<(ostream out, const Manikir& m);
-    void ispis(){
+    void ispis()
+    {
         cout<<"4.Manikir"<<endl;
     }
-    void setUsluga(string u){nazivManikirskeUsluge=u;}
+    void setUsluga(string u)
+    {
+        nazivManikirskeUsluge=u;
+    }
 
 
 };

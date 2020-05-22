@@ -35,25 +35,62 @@ private:
     bool zauzet;
     int idZaposlenog;
 public:
-    Vreme getVreme() const {return vreme;}
-    Datum getDatum() const {return datum;}
-    int getID()const{return idZaposlenog;}
-    bool getZauzet()const{return zauzet;}
-    int getBroj()const{return broj;}
-    int getBrOj()const{return BrOj;}
-    void setZauzet(bool z){zauzet=z;}
+    Vreme getVreme() const
+    {
+        return vreme;
+    }
+    Datum getDatum() const
+    {
+        return datum;
+    }
+    int getID()const
+    {
+        return idZaposlenog;
+    }
+    bool getZauzet()const
+    {
+        return zauzet;
+    }
+    int getBroj()const
+    {
+        return broj;
+    }
+    int getBrOj()const
+    {
+        return BrOj;
+    }
+    void setZauzet(bool z)
+    {
+        zauzet=z;
+    }
 
-    Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0) {BrOj++;}
-    Termin(const Termin& t){broj=t.broj; BrOj=t.BrOj; vreme=t.vreme; datum=t.datum; zauzet=t.zauzet; idZaposlenog=t.idZaposlenog;}
-    Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id){BrOj++;}
+    Termin():vreme(0, 0), datum(1, 1, 1), zauzet(0), idZaposlenog(0)
+    {
+        BrOj++;
+    }
+    Termin(const Termin& t)
+    {
+        broj=t.broj;
+        BrOj=t.BrOj;
+        vreme=t.vreme;
+        datum=t.datum;
+        zauzet=t.zauzet;
+        idZaposlenog=t.idZaposlenog;
+    }
+    Termin(int dan, int mesec, int godina, int sat, int minut, bool z, int id):vreme(sat, minut), datum(dan, mesec, godina), zauzet(z), idZaposlenog(id)
+    {
+        BrOj++;
+    }
     //friend ostream& operator<<(ostream& out, const Termin& t);
-    ~Termin(){
+    ~Termin()
+    {
         BrOj--;
     }
-    void citajFajl(string nazivFajla){
-    cout<<"U fajlu pise: "<<endl;
-    citajTxt(nazivFajla);
-    cout<<endl<<endl;
+    void citajFajl(string nazivFajla)
+    {
+        cout<<"U fajlu pise: "<<endl;
+        citajTxt(nazivFajla);
+        cout<<endl<<endl;
     }
     /*void napraviTermin(Datum d, Vreme v, ){
 

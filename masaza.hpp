@@ -6,19 +6,31 @@ class Masaza: public Usluga
 private:
     bool terapeutska;
 public:
-    Masaza():Usluga(0), terapeutska(true){}
+    Masaza():Usluga(0), terapeutska(true) {}
     Masaza(int c, bool t):Usluga(c), terapeutska(t) {}
-    int getCena()const{return cena;}
-    bool getT()const{return terapeutska;}
-    void ispis(){
-        if(terapeutska==true){
-        cout<<"2.Masaza"<<endl;
+    int getCena()const
+    {
+        return cena;
+    }
+    bool getT()const
+    {
+        return terapeutska;
+    }
+    void ispis()
+    {
+        if(terapeutska==true)
+        {
+            cout<<"2.Masaza"<<endl;
         }
-        else{
-        cout<<"2.Masaza"<<endl;
+        else
+        {
+            cout<<"2.Masaza"<<endl;
         }
     }
-    void setUsluga(bool u){terapeutska=u;}
+    void setUsluga(bool u)
+    {
+        terapeutska=u;
+    }
 };
 
 #endif // MASAZA_HPP_INCLUDED

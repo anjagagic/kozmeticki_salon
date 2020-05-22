@@ -7,7 +7,8 @@ protected:
     string username, sifra;
     string ime, prezime;
 public:
-    Korisnik(){
+    Korisnik()
+    {
         username="username";
         sifra="sifra";
         ime="ime";
@@ -21,7 +22,8 @@ public:
         prezime=p;
     }
 
-    virtual void registracija(){
+    virtual void registracija()
+    {
         cout<<"unesite ime: "<<endl;
         cin>>ime;
         cout<<"unesite prezime: "<<endl;
@@ -34,10 +36,22 @@ public:
         //ispis da li je uspesno ili nije
     }
     friend ostream& operator<<(ostream& out, const Korisnik& k);
-    string getUsername()const{return username;}
-    string getSifra()const{return sifra;}
-    string getIme()const{return ime;}
-    string getPrezime()const{return prezime;}
+    string getUsername()const
+    {
+        return username;
+    }
+    string getSifra()const
+    {
+        return sifra;
+    }
+    string getIme()const
+    {
+        return ime;
+    }
+    string getPrezime()const
+    {
+        return prezime;
+    }
 };
 
 #endif // KORISNIK_HPP_INCLUDED

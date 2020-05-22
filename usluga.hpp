@@ -7,9 +7,14 @@ protected:
     vector <Zaposleni> zaposleni;
     int cena;
 public:
-    Usluga(){
-    cena=0;}
-    Usluga(int c){cena=c;}
+    Usluga()
+    {
+        cena=0;
+    }
+    Usluga(int c)
+    {
+        cena=c;
+    }
     virtual void ispis()=0;
 };
 

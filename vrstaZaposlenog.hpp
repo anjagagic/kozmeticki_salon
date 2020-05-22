@@ -4,30 +4,37 @@
 #include "termin.hpp"
 #include "korisnik.hpp"
 
-ostream& operator<<(ostream& out, const Datum& d){
+ostream& operator<<(ostream& out, const Datum& d)
+{
     out<<d.getDan()<<"."<<d.getMesec()<<"."<<d.getGodina()<<"."<<endl;
     return out;
 }
 
-ostream& operator<<(ostream& out, const Vreme& v){
+ostream& operator<<(ostream& out, const Vreme& v)
+{
     out<<v.getSat();
     out<<":";
     out<<v.getMinut();
     return out;
 }
 
-ostream& operator<<(ostream& out, const Termin& t){
-        out<<"TERMIN"<<endl;
-        out<<"--------------"<<endl;
-        out<<"Datum:"<<t.getDatum()<<endl;
-        out<<"Vreme:"<<t.getVreme()<<endl;
-        out<<"ID zaposlenog:"<<t.getID()<<endl;
-        if(t.getZauzet()==1){
-        out<<"Termin zauzet"<<endl;}
-        else{
-        out<<"Termin nije zauzet"<<endl;}
-        out<<endl;
-        return out;
+ostream& operator<<(ostream& out, const Termin& t)
+{
+    out<<"TERMIN"<<endl;
+    out<<"--------------"<<endl;
+    out<<"Datum:"<<t.getDatum()<<endl;
+    out<<"Vreme:"<<t.getVreme()<<endl;
+    out<<"ID zaposlenog:"<<t.getID()<<endl;
+    if(t.getZauzet()==1)
+    {
+        out<<"Termin zauzet"<<endl;
+    }
+    else
+    {
+        out<<"Termin nije zauzet"<<endl;
+    }
+    out<<endl;
+    return out;
 }
 enum VrstaZaposlenog {SMINKER, MANIKER, PEDIKER, TREPAVICE, MASER};
 class Zaposleni: public Korisnik
@@ -37,18 +44,32 @@ private:
     VrstaZaposlenog zanimanje;
     vector<Termin> termini;
 public:
-    void setUsername(string un){username=un;}
-    void setSifra(string sf){sifra=sf;}
-    Zaposleni():Korisnik("username", "sifra", "ime", "prezime"){id=1; zanimanje=SMINKER;}
-    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z){}
+    void setUsername(string un)
+    {
+        username=un;
+    }
+    void setSifra(string sf)
+    {
+        sifra=sf;
+    }
+    Zaposleni():Korisnik("username", "sifra", "ime", "prezime")
+    {
+        id=1;
+        zanimanje=SMINKER;
+    }
+    Zaposleni(string i, string p, string u, string s, int ID, VrstaZaposlenog z):Korisnik(u, s, i, p), id(ID), zanimanje(z) {}
     friend ostream& operator<<(ostream& out, const Termin& t);
     friend ostream& operator<<(ostream& out, const Zaposleni& z);
-    void dodajTermin(const Termin& t){
+    void dodajTermin(const Termin& t)
+    {
         termini.push_back(t);
-        }
-    bool izbaciTermin(const Termin& t){
-        for(auto it=termini.begin(); it<termini.end(); it++){
-            if(t.getZauzet()==true){
+    }
+    bool izbaciTermin(const Termin& t)
+    {
+        for(auto it=termini.begin(); it<termini.end(); it++)
+        {
+            if(t.getZauzet()==true)
+            {
                 cout<<"Vas termin "<<t.getDatum()<<" u "<<t.getVreme()<<" je zauzet"<<endl;
                 termini.erase(it);
                 cout<<"TERMIN IZBRISAN"<<endl;
@@ -57,24 +78,35 @@ public:
         }
         return false;
     }
-    void pregledTermina(){
+    void pregledTermina()
+    {
         cout<<endl;
         cout<<"TERMINI PREGLED:"<<endl;
         cout<<endl;
-        for(auto it=termini.begin(); it<termini.end(); it++){
+        for(auto it=termini.begin(); it<termini.end(); it++)
+        {
             cout<<*it<<endl;
         }
     }
-    bool pretragaTermina(const Termin& t){
-        for(auto it=termini.begin(); it<termini.end(); it++){
-        if(t.getDatum().uporediDatum(it->getDatum())==true && t.getVreme().uporediVreme(it->getVreme())==true){
-            return true;
+    bool pretragaTermina(const Termin& t)
+    {
+        for(auto it=termini.begin(); it<termini.end(); it++)
+        {
+            if(t.getDatum().uporediDatum(it->getDatum())==true && t.getVreme().uporediVreme(it->getVreme())==true)
+            {
+                return true;
+            }
+            return false;
         }
-        return false;
     }
+    int getID()const
+    {
+        return id;
     }
-    int getID()const{return id;}
-    VrstaZaposlenog getZaposleni()const{return zanimanje;}
+    VrstaZaposlenog getZaposleni()const
+    {
+        return zanimanje;
+    }
 
 
     /*void login(){
@@ -93,12 +125,14 @@ public:
         cout<<"uspesno logovanje"<<endl;
         //ili neuspesno
     }*/
-    bool uporediZaposlene(const Zaposleni&  z){
-        if (ime==z.ime && prezime==z.prezime && username==z.username && sifra==z.sifra && id==z.id && zanimanje==z.zanimanje){
+    bool uporediZaposlene(const Zaposleni&  z)
+    {
+        if (ime==z.ime && prezime==z.prezime && username==z.username && sifra==z.sifra && id==z.id && zanimanje==z.zanimanje)
+        {
             return true;
         }
-    return false;
-}
+        return false;
+    }
 
 
 };

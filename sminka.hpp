@@ -6,16 +6,24 @@ class Sminka: public Usluga
 private:
     string nazivSminkerskeUsluge;
 public:
-    Sminka():Usluga(0), nazivSminkerskeUsluge("naziv"){}
+    Sminka():Usluga(0), nazivSminkerskeUsluge("naziv") {}
     Sminka(int c, string usluga):Usluga(c), nazivSminkerskeUsluge(usluga) {}
-    void unesiUslugu(string usluga){
+    void unesiUslugu(string usluga)
+    {
         nazivSminkerskeUsluge=usluga;
     }
-    void ispis(){
+    void ispis()
+    {
         cout<<"1.Sminka"<<endl;
     }
-    string getUsluga(){return nazivSminkerskeUsluge;}
-    void setUsluga(string usluga){nazivSminkerskeUsluge=usluga;}
+    string getUsluga()
+    {
+        return nazivSminkerskeUsluge;
+    }
+    void setUsluga(string usluga)
+    {
+        nazivSminkerskeUsluge=usluga;
+    }
 };
 
 #endif // SMINKA_HPP_INCLUDED
