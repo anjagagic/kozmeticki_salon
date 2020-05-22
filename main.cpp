@@ -224,7 +224,7 @@ int main()
                         system("CLS");
                         cout<<"Dobrodosli!"<<endl;
                         cout<<"Izaberite opciju: 1 - zakazi termin"<<endl;
-                        cout<<"                  2 - izadji"<<endl;
+                        cout<<"                  2 - odjavi se"<<endl;
                         int odabir3;
                         cin>>odabir3;
                         if(odabir3==1)
@@ -248,12 +248,37 @@ int main()
                             int usluga;
                             cout<<"odaberi uslugu:"<<endl;
                             cin>>usluga;
-                            /*cout<<"Unesite zeljenu uslugu za odabrano:"<<endl;
-                            string u;
-                            cin>>u;
-                            s1.setUsluga(u);*/
-                            /// ovde ti napravi funkciju koja pronalazi sve korisnike za odabranu uslugu i prikazuje ih
-                            /// napisala sam deklaraciju gore u mainu
+                                if(usluga==1){
+                                cout<<"Unesite sminkersku uslugu:"<<endl;
+                                string u;
+                                cin>>u;
+                                s1.setUsluga(u);
+                                }
+                                if(usluga==2){
+                                cout<<"Vrsta: 1 - terapeutska"<<endl;
+                                cout<<"       2 - nije terapeutska"<<endl;
+                                bool u;
+                                cin>>u;
+                                m1.setUsluga(u);
+                                }
+                                if(usluga==3){
+                                cout<<"Unesite pedikirsku uslugu:"<<endl;
+                                string u;
+                                cin>>u;
+                                p1.setUsluga(u);
+                                }
+                                if(usluga==1){
+                                cout<<"Unesite manikirsku uslugu:"<<endl;
+                                string u;
+                                cin>>u;
+                                ma1.setUsluga(u);
+                                }
+                                if(usluga==5){
+                                cout<<"Unesite uslugu za trepavice:"<<endl;
+                                string u;
+                                cin>>u;
+                                tre1.setUsluga(u);
+                                }
                             vector<Zaposleni> odabraniZaposleni = pretraziZaposlene(sviZaposleni, usluga);
                             for(auto it=odabraniZaposleni.begin(); it<odabraniZaposleni.end(); it++)
                             {
@@ -299,7 +324,7 @@ int main()
                     system("CLS");
                     cout<<"Dobrodosli!"<<endl;
                     cout<<"Izaberite opciju: 1 - pregled termina"<<endl;
-                    cout<<"                  2 - izadji"<<endl;
+                    cout<<"                  2 - odjavi se"<<endl;
                     int odabir2;
                     cout<<"Unesite: ";
                     cin>>odabir2;
@@ -320,7 +345,7 @@ int main()
             while(k.pretragaZaposlenih(z1)==false);
         }
 
-}while(odabir1!=3);
+}while(odabrir1!=3);
     /*Termin t1(18, 12, 2020, 15, 30, true, 1);
     Termin t2(1, 1, 1, 0, 0, false, 0);
     Klijent k1;

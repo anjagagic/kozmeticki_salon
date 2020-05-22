@@ -8,12 +8,10 @@ private:
 public:
     Pedikir():Usluga(0){}
     Pedikir(int c, string usluga):Usluga(c), nazivPedikirskeUsluge(usluga) {}
-    void unesiUslugu(string usluga){
-        nazivPedikirskeUsluge=usluga;
-    }
     void ispis(){
         cout<<"3.Pedikir"<<endl;
     }
+    void setUsluga(string u){nazivPedikirskeUsluge=u;}
 
 };
 

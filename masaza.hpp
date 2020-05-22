@@ -18,6 +18,7 @@ public:
         cout<<"2.Masaza"<<endl;
         }
     }
+    void setUsluga(bool u){terapeutska=u;}
 };
 
 #endif // MASAZA_HPP_INCLUDED

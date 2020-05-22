@@ -22,8 +22,7 @@ public:
     Klijent(string u, string s, string i, string p):Korisnik(u, s, i, p){}
 
     Termin zakaziTermin(Zaposleni& z, int usluga){
-                        if(usluga==1)
-                        {
+                        do{
                             int da,me,go,sa,mi;
                             cout<<"Unesite datum-> dan: "; cin>>da; cout<<endl;
                             cout<<"                mesec: "; cin>>me; cout<<endl;
@@ -34,9 +33,17 @@ public:
                             int iidd;
                             cin>>iidd;
                             Termin t1(da, me, go, sa, mi, false, iidd);
-                            termini.push_back(t1);
+                            for(auto it=termini.begin(); it<termini.end(); it++){
+                                if(t1.getDatum().uporediDatum(it->getDatum())==true && t1.getVreme().uporediVreme(it->getVreme())==true){
+                                    cout<<"Termin vec postoji, unesite novi"<<endl;
+                                }
+                                else {
+                                    termini.push_back(t1);
+                                }
+                            }
+                            }while(t1.getDatum().uporediDatum(it->getDatum())==true && t.getVreme().uporediVreme(it->getVreme())==true);
+
                             return t1;
-                        }
 
     }
         /*if (usluga==2){

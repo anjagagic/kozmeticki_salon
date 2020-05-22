@@ -11,9 +11,7 @@ public:
     void ispis(){
         cout<<"5.Trepavice"<<endl;
     }
-    void unesiUslugu(string usluga){
-        nazivUsluge=usluga;
-    }
+    void setUsluga(string u){nazivUsluge=u;}
 };
 
 #endif // TREPAVICE_HPP_INCLUDED
